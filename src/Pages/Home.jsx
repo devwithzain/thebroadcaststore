@@ -166,7 +166,7 @@ export default function Home() {
 							<div className="head">
 								<h1 data-aos="fade-up">CAMERA</h1>
 							</div>
-							<div className="slider-images">
+							<div className="slider-images hidden">
 								{images.map((src, index) => (
 									<img
 										key={index}
@@ -176,7 +176,9 @@ export default function Home() {
 									/>
 								))}
 							</div>
-							<div id="backgrounds">
+							<div
+								id="backgrounds"
+								className="hidden">
 								{backgrounds.map((background, index) => (
 									<div
 										key={index}

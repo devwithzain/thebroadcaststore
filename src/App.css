@@ -3781,6 +3781,9 @@ btn {
 }
 
 @media only screen and (max-width: 400px) {
+	.hidden {
+		display: none;
+	}
 	.slider-images > img {
 		position: absolute;
 		top: 0%;
@@ -4140,6 +4143,9 @@ btn {
 }
 
 @media screen and (min-width: 401px) and (max-width: 768px) {
+	.hidden {
+		display: none;
+	}
 	div#About h2 {
 		font-size: 50px;
 		line-height: 60px !important;
@@ -4489,6 +4495,9 @@ btn {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+	.hidden {
+		display: none;
+	}
 	.slider-images > img {
 		position: absolute;
 		top: 0%;
