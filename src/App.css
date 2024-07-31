@@ -232,28 +232,6 @@ div#hero img {
 div#hero-cameras {
 	position: relative;
 }
-div#hero-cameras:before {
-	content: "";
-	background: url("./assets/images/spiral.png");
-	height: 500px;
-	width: 500px;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	background-repeat: no-repeat;
-	background-size: contain;
-	z-index: 89;
-	animation: spin 2s linear infinite;
-}
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
 .slider-main {
 	background: radial-gradient(50% 50% at 50% 50%, #c7f6d0 0%, #7cb686 92.19%);
 	display: flex;
