@@ -22,8 +22,8 @@ import LogoMarquee from "../component/LogoMarquee";
 import headset01 from "../assets/images/home-1.webp";
 import headset02 from "../assets/images/home-2.webp";
 import headset03 from "../assets/images/home-3.webp";
-import headset04 from "../assets/images/home-4.png";
-import headset05 from "../assets/images/home-5.png";
+import headset04 from "../assets/images/home-4.webp";
+import headset05 from "../assets/images/home-5.webp";
 
 export default function Home() {
 	const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -630,11 +630,7 @@ export default function Home() {
 												<div class="price-btn">
 													<p class="price">Call for Price </p>
 													<Button className="lrn-more cart">
-														<Link
-															to={`/product-detail/${product.slug}`}
-															// onClick={(event) =>
-															// 	handleProductSelect(product, event)}
-														>
+														<Link to={`/product-detail/${product.slug}`}>
 															learn More
 														</Link>
 													</Button>
