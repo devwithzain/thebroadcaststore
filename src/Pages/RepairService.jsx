@@ -1,14 +1,26 @@
-import React, { useEffect } from "react";
-import { Grid, Container, Button } from "@mui/material";
-import serv1 from "../assets/images/service1.jpg";
-import serv2 from "../assets/images/service2.jpg";
-import { SlCallOut } from "react-icons/sl";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import { SlCallOut } from "react-icons/sl";
 import { FaRegCircleDot } from "react-icons/fa6";
+import serv1 from "../assets/images/service1.jpg";
+import serv2 from "../assets/images/service2.jpg";
+import React, { useEffect, useState } from "react";
 import { IoMailUnreadOutline } from "react-icons/io5";
-const RepairService = () => {
+import { Grid, Container, Button } from "@mui/material";
+
+export default function RepairService() {
+	const [title, setTitle] = useState("RepairService - The BroadCast Store");
+	const [description, setDescription] = useState(
+		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
+	);
+	useEffect(() => {
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+	}, [title, description]);
+
 	useEffect(() => {
 		AOS.init({ duration: 2000 });
 		window.scrollTo(0, 0);
@@ -24,7 +36,6 @@ const RepairService = () => {
 					</div>
 				</Container>
 			</div>
-
 			<div id="abt-text">
 				<div className="repair-headcontent">
 					<div
@@ -183,6 +194,4 @@ const RepairService = () => {
 			</div>
 		</Grid>
 	);
-};
-
-export default RepairService;
+}

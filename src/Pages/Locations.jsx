@@ -1,14 +1,26 @@
-import { Grid, Typography, Container } from "@mui/material";
-import { Link } from "react-router-dom";
 import AOS from "aos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import map from "../assets/images/los-ang.jpg";
+import { Grid, Typography, Container } from "@mui/material";
 
-const Locations = () => {
+export default function Locations() {
+	const [title, setTitle] = useState("Locations - The BroadCast Store");
+	const [description, setDescription] = useState(
+		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
+	);
+	useEffect(() => {
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+	}, [title, description]);
+
 	useEffect(() => {
 		AOS.init({ duration: 2000 });
 		window.scrollTo(0, 0);
 	}, []);
+
 	return (
 		<Grid>
 			<div
@@ -20,7 +32,6 @@ const Locations = () => {
 					</div>
 				</Container>
 			</div>
-
 			<Grid className="loc-sec">
 				<Container>
 					<Grid container>
@@ -62,6 +73,4 @@ const Locations = () => {
 			</Grid>
 		</Grid>
 	);
-};
-
-export default Locations;
+}

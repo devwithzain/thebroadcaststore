@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Container } from "@mui/material";
-import { Link } from "react-router-dom";
-import { IoStarSharp } from "react-icons/io5";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
+import { Container } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { IoStarSharp } from "react-icons/io5";
 
-function ProductDetail() {
-	const [title, setTitle] = useState("Product Details- The BroadCast Store");
+export default function ProductDetail() {
+	const [title, setTitle] = useState("Product Detail- The BroadCast Store");
 	const [description, setDescription] = useState(
 		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
 	);
+	const { slug } = useParams();
+	const [product, setProduct] = useState({});
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		document.title = title;
@@ -18,9 +21,6 @@ function ProductDetail() {
 			.getElementById("meta-description")
 			.setAttribute("content", description);
 	}, [title, description]);
-	const { slug } = useParams();
-	const [product, setProduct] = useState({});
-	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -116,5 +116,3 @@ function ProductDetail() {
 		</div>
 	);
 }
-
-export default ProductDetail;

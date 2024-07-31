@@ -1,18 +1,33 @@
-import React, { useEffect, useRef } from "react";
-import { Grid, Container } from "@mui/material";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
-import { FaArrowRightLong } from "react-icons/fa6";
-const Requestacall = () => {
+import { Grid, Container } from "@mui/material";
+import React, { useEffect, useRef, useState } from "react";
+
+export default function Requestacall() {
+	const [title, setTitle] = useState("Requestacall - The BroadCast Store");
+	const [description, setDescription] = useState(
+		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
+	);
+	useEffect(() => {
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+
+		AOS.init({ duration: 2000 });
+		window.scrollTo(0, 0);
+	}, [title, description]);
+
 	useEffect(() => {
 		AOS.init({ duration: 2000 });
 		window.scrollTo(0, 0);
 	}, []);
 
+	const form = useRef();
 	const navigate = useNavigate();
 	const [contact, setContact] = React.useState({
 		firstName: "",
@@ -32,12 +47,12 @@ const Requestacall = () => {
 		title: "",
 		spectialOptions: "",
 	});
-	const form = useRef();
 
 	const contactChange = (e) => {
 		let { name, value } = e.target;
 		setContact({ ...contact, [name]: value });
 	};
+
 	const contactSubmit = (e) => {
 		e.preventDefault();
 		emailjs
@@ -57,6 +72,7 @@ const Requestacall = () => {
 				},
 			);
 	};
+
 	return (
 		<Grid>
 			<div
@@ -72,7 +88,6 @@ const Requestacall = () => {
 					</div>
 				</Container>
 			</div>
-
 			<div id="form">
 				<form
 					ref={form}
@@ -428,7 +443,6 @@ const Requestacall = () => {
 									</div>
 								</Col>
 							</Row>
-
 							<Row>
 								<Col>
 									<div className="btns">
@@ -446,6 +460,4 @@ const Requestacall = () => {
 			</div>
 		</Grid>
 	);
-};
-
-export default Requestacall;
+}

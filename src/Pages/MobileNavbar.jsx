@@ -1,13 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { IoSearchOutline } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
+import { Button, Form } from "react-bootstrap";
+import { IoSearchOutline } from "react-icons/io5";
+import { Link, useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import logo from "../../src/assets/images/thebroadcastlogo.png";
 import { SlSocialFacebook, SlSocialLinkedin } from "react-icons/sl";
-import { IoMenu } from "react-icons/io5";
-import { Button, Form } from "react-bootstrap";
 
 const navLinks = [
 	{
@@ -33,10 +33,11 @@ const navLinks = [
 ];
 
 export default function MobileNav() {
-	const [toggle, setToggle] = useState(false);
-	const [openSearch, setOpenSearch] = useState(false);
-	const [searchQuery, setSearchQuery] = useState("");
 	const navigate = useNavigate();
+	const [toggle, setToggle] = useState(false);
+	const [searchQuery, setSearchQuery] = useState("");
+	const [openSearch, setOpenSearch] = useState(false);
+
 	const handleSearchSubmit = (event) => {
 		event.preventDefault();
 		navigate(`/search?q=${searchQuery}`);
@@ -57,14 +58,6 @@ export default function MobileNav() {
 			document.body.style.overflow = "unset";
 		};
 	}, [toggle]);
-
-	const handleReload = (e) => {
-		navigate("/");
-		// if (location.pathname === '/') {
-		e.preventDefault();
-		window.location.reload();
-		// }
-	};
 
 	return (
 		<div className="mobileNavbar">
@@ -118,11 +111,8 @@ export default function MobileNav() {
 								<Link
 									to={item.to}
 									key={item.title}
-									onClick={(e) => {
+									onClick={() => {
 										setToggle(!toggle);
-										if (item.to === "/") {
-											handleReload(e);
-										}
 									}}
 									className="mobileNavbar-fixed-links-title">
 									{item.title}

@@ -1,16 +1,27 @@
-import React, { useEffect } from "react";
-import { Grid, Container } from "@mui/material";
-import repair from "../assets/images/Repair.jpg";
-import store from "../assets/images/store.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import store from "../assets/images/store.jpg";
+import { Grid, Container } from "@mui/material";
+import repair from "../assets/images/Repair.jpg";
 import { FaRegCircleDot } from "react-icons/fa6";
+import React, { useEffect, useState } from "react";
 
-const Financing = () => {
+export default function Financing() {
+	const [title, setTitle] = useState("Financing - The BroadCast Store");
+	const [description, setDescription] = useState(
+		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
+	);
+	useEffect(() => {
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+	}, [title, description]);
 	useEffect(() => {
 		AOS.init({ duration: 2000 });
 		window.scrollTo(0, 0);
 	}, []);
+
 	return (
 		<Grid>
 			<div
@@ -134,6 +145,4 @@ const Financing = () => {
 			</div>
 		</Grid>
 	);
-};
-
-export default Financing;
+}

@@ -1,30 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import { Grid, Container } from "@mui/material";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import emailjs from "@emailjs/browser";
+import { Grid, Container } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
+import React, { useEffect, useRef, useState } from "react";
+
 import productTextImg from "../../src/assets/images/contactUsImg.png";
 
-const Contact = () => {
-	const [title, setTitle] = useState("Contact Us - The BroadCast Store");
+export default function Contact() {
+	const [title, setTitle] = useState("Contact - The BroadCast Store");
 	const [description, setDescription] = useState(
 		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
 	);
 
-	useEffect(() => {
-		document.title = title;
-		document
-			.getElementById("meta-description")
-			.setAttribute("content", description);
-	}, [title, description]);
-	useEffect(() => {
-		AOS.init({ duration: 2000 });
-		window.scrollTo(0, 0);
-	}, []);
+	const form = useRef();
+
+	const contactChange = (e) => {
+		let { name, value } = e.target;
+		setContact({ ...contact, [name]: value });
+	};
+
 	const navigate = useNavigate();
 	const [contact, setContact] = React.useState({
 		firstName: "",
@@ -33,12 +31,18 @@ const Contact = () => {
 		message: "",
 		phone: "",
 	});
-	const form = useRef();
 
-	const contactChange = (e) => {
-		let { name, value } = e.target;
-		setContact({ ...contact, [name]: value });
-	};
+	useEffect(() => {
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+	}, [title, description]);
+
+	useEffect(() => {
+		AOS.init({ duration: 2000 });
+		window.scrollTo(0, 0);
+	}, []);
 
 	const contactSubmit = (e) => {
 		e.preventDefault();
@@ -289,6 +293,4 @@ const Contact = () => {
 			</div>
 		</Grid>
 	);
-};
-
-export default Contact;
+}

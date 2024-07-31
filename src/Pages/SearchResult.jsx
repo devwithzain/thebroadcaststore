@@ -1,22 +1,32 @@
-import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import axios from "axios";
-import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Container from "@mui/material/Container";
 import Button from "react-bootstrap/Button";
-import { IoStarSharp } from "react-icons/io5"; // Assuming this is the correct import for the star icon
+import { IoStarSharp } from "react-icons/io5";
+import { useLocation } from "react-router-dom";
+import Container from "@mui/material/Container";
+import React, { useState, useEffect } from "react";
 
 const useQuery = () => {
 	return new URLSearchParams(useLocation().search);
 };
 
-const SearchResult = () => {
-	const [searchResults, setSearchResults] = useState([]);
-	const [selectedProduct, setSelectedProduct] = useState(null);
+export default function SearchResult() {
 	const query = useQuery();
 	const searchQuery = query.get("q");
+	const [searchResults, setSearchResults] = useState([]);
+	const [selectedProduct, setSelectedProduct] = useState(null);
+	const [title, setTitle] = useState("SearchResult - The BroadCast Store");
+	const [description, setDescription] = useState(
+		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
+	);
+	useEffect(() => {
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+	}, [title, description]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -138,6 +148,4 @@ const SearchResult = () => {
 			</div>
 		</>
 	);
-};
-
-export default SearchResult;
+}

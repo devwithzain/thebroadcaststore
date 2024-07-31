@@ -218,7 +218,7 @@ function CategoryDetail() {
 								className="button-container">
 								<div className="button">
 									<Button className="lrn-more">
-										<Link to={"#"}>
+										<Link to={"/product"}>
 											Best Seller <FaArrowRightLong />
 										</Link>
 									</Button>

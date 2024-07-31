@@ -75,7 +75,7 @@ export default function Navbarheader() {
 						<Link
 							className="link"
 							to="/product">
-							Products
+							Product
 						</Link>
 						<Link
 							className="link"

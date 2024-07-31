@@ -1,59 +1,34 @@
-import { Grid, Button } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import systemImg from "../assets/images/systemImg.png";
-import aboutCameraImg from "../assets/images/aboutCameraImg.png";
-import mediaImg from "../assets/images/mediaImg.png";
-import packagesImg from "../assets/images/packagesImg.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import panasonic from "../assets/images/panasonic.png";
-import pentax from "../assets/images/pentax.png";
-import nikon from "../assets/images/nikon.png";
-import sonyy from "../assets/images/sonyy.png";
-import canon from "../assets/images/canon.png";
-import fujifilm from "../assets/images/fujifilm.png";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import "slick-carousel/slick/slick-theme.css";
+import { Grid, Button } from "@mui/material";
 import { FaArrowRightLong } from "react-icons/fa6";
+import React, { useEffect, useState } from "react";
+
+import LogoMarquee from "../component/LogoMarquee";
+import mediaImg from "../assets/images/mediaImg.png";
+import systemImg from "../assets/images/systemImg.png";
+import packagesImg from "../assets/images/packagesImg.png";
+import aboutCameraImg from "../assets/images/aboutCameraImg.png";
 import aboutbackgroundText from "../assets/images/aboutbackgroundText.png";
 
 export default function About() {
-	const [title, setTitle] = useState("About Us- The BroadCast Store");
+	const [title, setTitle] = useState("About - The BroadCast Store");
 	const [description, setDescription] = useState(
 		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
 	);
-
 	useEffect(() => {
 		document.title = title;
 		document
 			.getElementById("meta-description")
 			.setAttribute("content", description);
-	}, [title, description]);
 
-	useEffect(() => {
 		AOS.init({ duration: 2000 });
 		window.scrollTo(0, 0);
-	}, []);
-	var logos = {
-		speed: 2000,
-		autoplay: true,
-		autoplaySpeed: 0,
-		centerMode: false,
-		cssEase: "linear",
-		slidesToShow: 1,
-		draggable: false,
-		focusOnSelect: false,
-		pauseOnFocus: true,
-		pauseOnHover: true,
-		slidesToScroll: 1,
-		variableWidth: true,
-		infinite: true,
-		initialSlide: 1,
-		arrows: false,
-		buttons: false,
-	};
+	}, [title, description]);
+
 	return (
 		<Grid>
 			<div className="innerban">
@@ -71,7 +46,6 @@ export default function About() {
 				</div>
 				<p className="breadcum">Home . About Us</p>
 			</div>
-
 			<div id="abt-text-about">
 				<div className="headcontent">
 					<div className="innerContent">
@@ -108,7 +82,6 @@ export default function About() {
 					</div>
 				</div>
 			</div>
-
 			<div id="abt-text-system">
 				<div className="image">
 					<img
@@ -135,7 +108,6 @@ export default function About() {
 					</p>
 				</div>
 			</div>
-
 			<div className="abt-flexdiv">
 				<div className="row-1">
 					<div className="col-1">
@@ -216,83 +188,7 @@ export default function About() {
 					</div>
 				</div>
 			</div>
-
-			<Grid className="partners-sec">
-				<Slider {...logos}>
-					<Grid className="slide-logo">
-						<img
-							src={panasonic}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={pentax}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={nikon}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={sonyy}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={canon}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={fujifilm}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={panasonic}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={pentax}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={nikon}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={sonyy}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={canon}
-							alt=""
-						/>
-					</Grid>
-					<Grid className="slide-logo">
-						<img
-							src={fujifilm}
-							alt=""
-						/>
-					</Grid>
-				</Slider>
-			</Grid>
+			<LogoMarquee />
 		</Grid>
 	);
 }

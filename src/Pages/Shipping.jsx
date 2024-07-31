@@ -1,17 +1,29 @@
-import React, { useEffect } from "react";
-import { Grid, Container } from "@mui/material";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Grid, Container } from "@mui/material";
 import { FaRegCircleDot } from "react-icons/fa6";
-import repair from "../assets/images/Repair.jpg";
-import usa from "../assets/images/usa.webp";
-import customer from "../assets/images/inter-customer.jpg";
-import shipping from "../assets/images/Shipping.jpg";
-import ups from "../assets/images/ups.jpg";
-import fedex from "../assets/images/FedEx.png";
-import air from "../assets/images/air.jpg";
+import React, { useEffect, useState } from "react";
 
-const Shipping = () => {
+import air from "../assets/images/air.jpg";
+import ups from "../assets/images/ups.jpg";
+import usa from "../assets/images/usa.webp";
+import fedex from "../assets/images/FedEx.png";
+import repair from "../assets/images/Repair.jpg";
+import shipping from "../assets/images/Shipping.jpg";
+import customer from "../assets/images/inter-customer.jpg";
+
+export default function Shipping() {
+	const [title, setTitle] = useState("Shipping - The BroadCast Store");
+	const [description, setDescription] = useState(
+		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
+	);
+	useEffect(() => {
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+	}, [title, description]);
+
 	useEffect(() => {
 		AOS.init({ duration: 2000 });
 		window.scrollTo(0, 0);
@@ -27,7 +39,6 @@ const Shipping = () => {
 					</div>
 				</Container>
 			</div>
-
 			<div id="abt-text">
 				<div className="repair-headcontent">
 					<div
@@ -350,6 +361,4 @@ const Shipping = () => {
 			</div>
 		</Grid>
 	);
-};
-
-export default Shipping;
+}

@@ -1,18 +1,32 @@
-import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import VideoTapeCaptureImg from "../assets/images/VideoTapeCapture.jpeg";
-import AudioTapeCapture from "../assets/images/AudioTapeCapture.jpg";
-import RestorationServices from "../assets/images/RestorationServices.png";
-import EncodingServices from "../assets/images/EncodingServices.jpg";
-import PhotoScanning from "../assets/images/PhotoScanning.webp";
+import React, { useEffect, useState } from "react";
+
+import whyus from "../assets/images/whyus.jpg";
 import FilmTransfer from "../assets/images/FilmTransfer.png";
-import PhotoScanning02 from "../assets/images/PhotoScanning02.jpg";
+import PhotoScanning from "../assets/images/PhotoScanning.webp";
 import HomeVideoMedia from "../assets/images/HomeVideoMedia.jpg";
 import HighestQuality from "../assets/images/HighestQuality.jpg";
-import whyus from "../assets/images/whyus.jpg";
+import PhotoScanning02 from "../assets/images/PhotoScanning02.jpg";
+import EncodingServices from "../assets/images/EncodingServices.jpg";
+import AudioTapeCapture from "../assets/images/AudioTapeCapture.jpg";
+import VideoTapeCaptureImg from "../assets/images/VideoTapeCapture.jpeg";
+import RestorationServices from "../assets/images/RestorationServices.png";
 
-const LargeScaleMediaMigration = () => {
+export default function LargeScaleMediaMigration() {
+	const [title, setTitle] = useState(
+		"LargeScaleMediaMigration - The BroadCast Store",
+	);
+	const [description, setDescription] = useState(
+		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
+	);
+	useEffect(() => {
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+	}, [title, description]);
+
 	useEffect(() => {
 		AOS.init({ duration: 2000 });
 		window.scrollTo(0, 0);
@@ -30,7 +44,6 @@ const LargeScaleMediaMigration = () => {
 				</div>
 				<p className="breadcum">Multimedia Services</p>
 			</div>
-
 			<div id="abt-text-about">
 				<div className="headcontent">
 					<div className="innerContent">
@@ -62,7 +75,6 @@ const LargeScaleMediaMigration = () => {
 					</div>
 				</div>
 			</div>
-
 			<div id="abt-text-system">
 				<div className="image">
 					<img
@@ -85,7 +97,6 @@ const LargeScaleMediaMigration = () => {
 					</p>
 				</div>
 			</div>
-
 			<div className="abt-flexdiv abt-flexdiv-lsmm">
 				<div className="row-1">
 					<div className="col-1">
@@ -273,6 +284,4 @@ const LargeScaleMediaMigration = () => {
 			</div>
 		</>
 	);
-};
-
-export default LargeScaleMediaMigration;
+}
