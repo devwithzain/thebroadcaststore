@@ -15,8 +15,15 @@ import Svg from "../component/Svg";
 import React, { useState, useEffect } from "react";
 
 import tech from "../assets/images/tech.png";
-import cameraabt from "../assets/images/cameraabt.png";
+import cameraabt from "../assets/images/cameraabt.webp";
 import LogoMarquee from "../component/LogoMarquee";
+
+//asdasdqwe
+import headset01 from "../assets/images/home-1.webp";
+import headset02 from "../assets/images/home-2.webp";
+import headset03 from "../assets/images/home-3.webp";
+import headset04 from "../assets/images/home-4.png";
+import headset05 from "../assets/images/home-5.png";
 
 export default function Home() {
 	const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -121,6 +128,35 @@ export default function Home() {
 		],
 	};
 
+	// asdas
+	const images = [headset01, headset02, headset03, headset04, headset05];
+	const backgrounds = [
+		"radial-gradient(50% 50% at 50% 50%, #C7F6D0 0%, #7CB686 92.19%)",
+		"radial-gradient(50% 50% at 50% 50%, #D1E4F6 0%, #5F9CCF 100%)",
+		"radial-gradient(50% 50% at 50% 50%, #FFB7B2 0%, #ED746E 100%)",
+		"radial-gradient(50% 50% at 50% 50%, #D7D7D7 0%, #979797 100%)",
+		"radial-gradient(50% 50% at 50% 50%, #6B6B6B 0%, #292929 100%)",
+	];
+
+	const [imageIndex, setImageIndex] = useState(0);
+
+	useEffect(() => {
+		const updateSlider = () => {
+			setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+		};
+
+		const interval = setInterval(updateSlider, 3000);
+		return () => clearInterval(interval);
+	}, [images.length]);
+
+	const getClassName = (index) => {
+		if (index === imageIndex) return "active";
+		if (index === (imageIndex - 1 + images.length) % images.length)
+			return "previous";
+		if (index === (imageIndex + 1) % images.length) return "next";
+		return "inactive";
+	};
+
 	return (
 		<Grid className="body-bg">
 			{!selectedProduct && (
@@ -129,6 +165,27 @@ export default function Home() {
 						<div className="slider-main">
 							<div className="head">
 								<h1 data-aos="fade-up">CAMERA</h1>
+							</div>
+							<div className="slider-images">
+								{images.map((src, index) => (
+									<img
+										key={index}
+										className={`slider-image ${getClassName(index)}`}
+										src={src}
+										alt=""
+									/>
+								))}
+							</div>
+							<div id="backgrounds">
+								{backgrounds.map((background, index) => (
+									<div
+										key={index}
+										className="background"
+										style={{
+											background: background,
+											opacity: imageIndex === index ? 1 : 0,
+										}}></div>
+								))}
 							</div>
 							<div className="head-stroke">
 								<h1 data-aos="fade-down">CAMERA</h1>
