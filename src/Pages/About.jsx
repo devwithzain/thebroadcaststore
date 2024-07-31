@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import LogoMarquee from "../component/LogoMarquee";
 import mediaImg from "../assets/images/mediaImg.webp";
 import systemImg from "../assets/images/systemImg.webp";
-import packagesImg from "../assets/images/packagesImg.webp";
+import packagesImg from "../assets/images/packagesImg.jpg";
 import aboutCameraImg from "../assets/images/aboutCameraImg.webp";
 import aboutbackgroundText from "../assets/images/aboutbackgroundText.webp";
 

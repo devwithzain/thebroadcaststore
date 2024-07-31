@@ -7,11 +7,11 @@ import FilmTransfer from "../assets/images/FilmTransfer.webp";
 import PhotoScanning from "../assets/images/PhotoScanning.webp";
 import HomeVideoMedia from "../assets/images/HomeVideoMedia.webp";
 import HighestQuality from "../assets/images/HighestQuality.webp";
-import PhotoScanning02 from "../assets/images/PhotoScanning02.webp";
+import PhotoScanning02 from "../assets/images/PhotoScanning02.jpg";
 import EncodingServices from "../assets/images/EncodingServices.webp";
 import AudioTapeCapture from "../assets/images/AudioTapeCapture.webp";
 import VideoTapeCaptureImg from "../assets/images/VideoTapeCapture.webp";
-import RestorationServices from "../assets/images/RestorationServices.webp";
+import RestorationServices from "../assets/images/RestorationServices.jpg";
 
 export default function LargeScaleMediaMigration() {
 	const [title, setTitle] = useState(

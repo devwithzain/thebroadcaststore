@@ -2,7 +2,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import store from "../assets/images/store.webp";
 import { Grid, Container } from "@mui/material";
-import repair from "../assets/images/Repair.webp";
+import repair from "../assets/images/Repair.jpg";
 import { FaRegCircleDot } from "react-icons/fa6";
 import React, { useEffect, useState } from "react";
 
