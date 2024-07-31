@@ -11,7 +11,7 @@ import LogoMarquee from "../component/LogoMarquee";
 import mediaImg from "../assets/images/mediaImg.png";
 import systemImg from "../assets/images/systemImg.png";
 import packagesImg from "../assets/images/packagesImg.png";
-import aboutCameraImg from "../assets/images/aboutCameraImg.png";
+import aboutCameraImg from "../assets/images/aboutCameraImg.webp";
 import aboutbackgroundText from "../assets/images/aboutbackgroundText.png";
 
 export default function About() {

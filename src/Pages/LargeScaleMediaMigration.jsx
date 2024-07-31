@@ -3,7 +3,7 @@ import "aos/dist/aos.css";
 import React, { useEffect, useState } from "react";
 
 import whyus from "../assets/images/whyus.jpg";
-import FilmTransfer from "../assets/images/FilmTransfer.png";
+import FilmTransfer from "../assets/images/FilmTransfer.webp";
 import PhotoScanning from "../assets/images/PhotoScanning.webp";
 import HomeVideoMedia from "../assets/images/HomeVideoMedia.jpg";
 import HighestQuality from "../assets/images/HighestQuality.jpg";
