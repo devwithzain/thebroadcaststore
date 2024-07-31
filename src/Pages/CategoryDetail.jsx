@@ -15,7 +15,7 @@ import sliderImg1 from "../assets/images/carousel1.webp";
 import sliderImg2 from "../assets/images/carousel2.webp";
 import sliderImg3 from "../assets/images/carousel5.webp";
 import sliderImg4 from "../assets/images/carousel4.webp";
-import productTextImg from "../assets/images/productTextImg.png";
+import productTextImg from "../assets/images/productTextImg.webp";
 
 function CategoryDetail() {
 	const [title, setTitle] = useState("Category - The BroadCast Store");

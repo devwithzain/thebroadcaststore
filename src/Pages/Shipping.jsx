@@ -4,13 +4,13 @@ import { Grid, Container } from "@mui/material";
 import { FaRegCircleDot } from "react-icons/fa6";
 import React, { useEffect, useState } from "react";
 
-import air from "../assets/images/air.jpg";
-import ups from "../assets/images/ups.jpg";
+import air from "../assets/images/air.webp";
+import ups from "../assets/images/ups.webp";
 import usa from "../assets/images/usa.webp";
-import fedex from "../assets/images/FedEx.png";
-import repair from "../assets/images/Repair.jpg";
-import shipping from "../assets/images/Shipping.jpg";
-import customer from "../assets/images/inter-customer.jpg";
+import fedex from "../assets/images/FedEx.webp";
+import repair from "../assets/images/Repair.webp";
+import shipping from "../assets/images/Shipping.webp";
+import customer from "../assets/images/inter-customer.webp";
 
 export default function Shipping() {
 	const [title, setTitle] = useState("Shipping - The BroadCast Store");

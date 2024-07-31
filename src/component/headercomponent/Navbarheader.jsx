@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import MobileNav from "../../Pages/MobileNavbar";
-import thebroadcastlogo from "../../assets/images/thebroadcastlogo.png";
+import thebroadcastlogo from "../../assets/images/thebroadcastlogo.webp";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";

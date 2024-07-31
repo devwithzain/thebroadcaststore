@@ -2,16 +2,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect, useState } from "react";
 
-import whyus from "../assets/images/whyus.jpg";
+import whyus from "../assets/images/whyus.webp";
 import FilmTransfer from "../assets/images/FilmTransfer.webp";
 import PhotoScanning from "../assets/images/PhotoScanning.webp";
-import HomeVideoMedia from "../assets/images/HomeVideoMedia.jpg";
-import HighestQuality from "../assets/images/HighestQuality.jpg";
-import PhotoScanning02 from "../assets/images/PhotoScanning02.jpg";
-import EncodingServices from "../assets/images/EncodingServices.jpg";
-import AudioTapeCapture from "../assets/images/AudioTapeCapture.jpg";
-import VideoTapeCaptureImg from "../assets/images/VideoTapeCapture.jpeg";
-import RestorationServices from "../assets/images/RestorationServices.png";
+import HomeVideoMedia from "../assets/images/HomeVideoMedia.webp";
+import HighestQuality from "../assets/images/HighestQuality.webp";
+import PhotoScanning02 from "../assets/images/PhotoScanning02.webp";
+import EncodingServices from "../assets/images/EncodingServices.webp";
+import AudioTapeCapture from "../assets/images/AudioTapeCapture.webp";
+import VideoTapeCaptureImg from "../assets/images/VideoTapeCapture.webp";
+import RestorationServices from "../assets/images/RestorationServices.webp";
 
 export default function LargeScaleMediaMigration() {
 	const [title, setTitle] = useState(

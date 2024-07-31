@@ -8,11 +8,11 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import React, { useEffect, useState } from "react";
 
 import LogoMarquee from "../component/LogoMarquee";
-import mediaImg from "../assets/images/mediaImg.png";
-import systemImg from "../assets/images/systemImg.png";
-import packagesImg from "../assets/images/packagesImg.png";
+import mediaImg from "../assets/images/mediaImg.webp";
+import systemImg from "../assets/images/systemImg.webp";
+import packagesImg from "../assets/images/packagesImg.webp";
 import aboutCameraImg from "../assets/images/aboutCameraImg.webp";
-import aboutbackgroundText from "../assets/images/aboutbackgroundText.png";
+import aboutbackgroundText from "../assets/images/aboutbackgroundText.webp";
 
 export default function About() {
 	const [title, setTitle] = useState("About - The BroadCast Store");

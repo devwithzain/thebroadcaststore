@@ -1,7 +1,7 @@
 import AOS from "aos";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import map from "../assets/images/los-ang.jpg";
+import map from "../assets/images/los-ang.webp";
 import { Grid, Typography, Container } from "@mui/material";
 
 export default function Locations() {

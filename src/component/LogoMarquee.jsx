@@ -1,12 +1,12 @@
 import React from "react";
 import { Grid } from "@mui/material";
 
-import nikon from "../assets/images/nikon.png";
-import sonyy from "../assets/images/sonyy.png";
-import canon from "../assets/images/canon.png";
-import pentax from "../assets/images/pentax.png";
-import fujifilm from "../assets/images/fujifilm.png";
-import panasonic from "../assets/images/panasonic.png";
+import nikon from "../assets/images/nikon.webp";
+import sonyy from "../assets/images/sonyy.webp";
+import canon from "../assets/images/canon.webp";
+import pentax from "../assets/images/pentax.webp";
+import fujifilm from "../assets/images/fujifilm.webp";
+import panasonic from "../assets/images/panasonic.webp";
 import Slider from "react-slick";
 
 export default function LogoMarquee() {

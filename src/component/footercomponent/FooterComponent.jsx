@@ -1,8 +1,8 @@
-import delivery from "../../assets/images/delivery.png";
-import payment from "../../assets/images/payment.png";
-import support from "../../assets/images/support.png";
-import trust from "../../assets/images/trust.png";
-import paymentmethod from "../../assets/images/paymentmethod.png";
+import delivery from "../../assets/images/delivery.webp";
+import payment from "../../assets/images/payment.webp";
+import support from "../../assets/images/support.webp";
+import trust from "../../assets/images/trust.webp";
+import paymentmethod from "../../assets/images/paymentmethod.webp";
 import React from "react";
 import { Link } from "react-router-dom";
 import { CiPhone } from "react-icons/ci";

@@ -14,7 +14,7 @@ import { Grid, Container, Button } from "@mui/material";
 import Svg from "../component/Svg";
 import React, { useState, useEffect } from "react";
 
-import tech from "../assets/images/tech.png";
+import tech from "../assets/images/tech.webp";
 import cameraabt from "../assets/images/cameraabt.webp";
 import LogoMarquee from "../component/LogoMarquee";
 

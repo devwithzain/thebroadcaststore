@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import React, { useEffect, useRef, useState } from "react";
 
-import productTextImg from "../../src/assets/images/contactUsImg.png";
+import productTextImg from "../../src/assets/images/contactUsImg.webp";
 
 export default function Contact() {
 	const [title, setTitle] = useState("Contact - The BroadCast Store");

@@ -6,7 +6,7 @@ import { Button, Form } from "react-bootstrap";
 import { IoSearchOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import logo from "../../src/assets/images/thebroadcastlogo.png";
+import logo from "../../src/assets/images/thebroadcastlogo.webp";
 import { SlSocialFacebook, SlSocialLinkedin } from "react-icons/sl";
 
 const navLinks = [

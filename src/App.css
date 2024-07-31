@@ -151,7 +151,7 @@ a.nav-link svg {
 
 /* hero Section CSS  */
 .body-bg {
-	background: url("../src//assets/images/homebg.jpg");
+	background: url("../src//assets/images/homebg.webp");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 100% 100%;
@@ -1139,7 +1139,7 @@ div#tech .fs {
 
 .ze:before {
 	content: "";
-	background: url("./assets/images/arrowone.png");
+	background: url("./assets/images/arrowone.webp");
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -1153,7 +1153,7 @@ div#tech .fs {
 }
 .ar:before {
 	content: "";
-	background: url("./assets/images/arrowtwo.png");
+	background: url("./assets/images/arrowtwo.webp");
 	height: 60%;
 	width: 100%;
 	position: absolute;
@@ -1165,7 +1165,7 @@ div#tech .fs {
 }
 .fr:before {
 	content: "";
-	background: url("./assets/images/arrowthree.png");
+	background: url("./assets/images/arrowthree.webp");
 	height: 190%;
 	width: 100%;
 	position: absolute;
@@ -1178,7 +1178,7 @@ div#tech .fs {
 
 .af-motr:before {
 	content: "";
-	background: url("./assets/images/arrowfour.png");
+	background: url("./assets/images/arrowfour.webp");
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -1192,7 +1192,7 @@ div#tech .fs {
 }
 .fs:before {
 	content: "";
-	background: url("./assets/images/arrowfive.png");
+	background: url("./assets/images/arrowfive.webp");
 	height: 80%;
 	width: 100%;
 	position: absolute;
@@ -1835,7 +1835,7 @@ div#abt-des {
 }
 /* .innerban::before {
 	content: "";
-	background: url("./assets/images/shape.png");
+	background: url("./assets/images/shape.webp");
 	height: 545px;
 	width: 545px;
 	position: absolute;
@@ -1847,7 +1847,7 @@ div#abt-des {
 
 /* Contact us CSS  */
 .innerban-contact {
-	background: url("./assets/images/contactBgImg.png");
+	background: url("./assets/images/contactBgImg.webp");
 	width: 100%;
 	min-height: 100vh;
 	background-position: center;
@@ -1859,7 +1859,7 @@ div#abt-des {
 	gap: 30px;
 }
 .bannerText-Contact {
-	background: url("../src/assets/images/contactUsImg.png");
+	background: url("../src/assets/images/contactUsImg.webp");
 	width: 80%;
 	background-position: center;
 	background-size: cover;
@@ -2548,7 +2548,7 @@ strong.pric-title {
 
 /* product page */
 .product-innerban {
-	background: url("./assets/images/contactBgImg.png");
+	background: url("./assets/images/contactBgImg.webp");
 	width: 100%;
 	height: 100vh;
 	background-position: center;
@@ -2842,7 +2842,7 @@ btn {
 /* About Page */
 
 .innerban {
-	background: url("./assets/images/aboutBackgroundImg.png") lightgray 0px 0px /
+	background: url("./assets/images/aboutBackgroundImg.webp") lightgray 0px 0px /
 		100% 102.584% no-repeat;
 	width: 100%;
 	height: 80vh;
@@ -3065,7 +3065,7 @@ btn {
 
 .abt-flexdiv {
 	width: 100%;
-	background-image: url("./assets/images/aboutBackgroundImg.png");
+	background-image: url("./assets/images/aboutBackgroundImg.webp");
 	background-position: center;
 	padding: 100px 50px;
 	background-size: cover;
