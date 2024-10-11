@@ -358,17 +358,6 @@ export default function Product() {
 										<h2 className="heading">{categoryName}</h2>
 									</div>
 								</Col>
-								<Col
-									xs={6}
-									className="button-container">
-									<div className="button">
-										<Button className="lrn-more">
-											<Link to={"/all-product"}>
-												View All Products <FaArrowRightLong />
-											</Link>
-										</Button>
-									</div>
-								</Col>
 							</Row>
 						</div>
 						{selectedTab === "allProducts" && !selectedCategory && (
@@ -409,6 +398,18 @@ export default function Product() {
 								<Svg />
 							</>
 						)}
+						<br />
+						<br />
+						{selectedTab === "allProducts" && (
+							<div className="button btn-all-product">
+								<Button className="lrn-more">
+									<Link to={"/all-product"}>
+										View All Products <FaArrowRightLong />
+									</Link>
+								</Button>
+							</div>
+						)}
+
 						{selectedTab === "topBrands" && !selectedCategory && (
 							<>
 								<div className="products-container">

@@ -104,7 +104,8 @@ export default function ProductDetail() {
 											className="para"
 											dangerouslySetInnerHTML={{
 												__html: product.long_desc,
-											}}></p>{" "}
+											}}
+										/>
 									</div>
 								</Col>
 							</Row>

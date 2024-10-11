@@ -24,9 +24,12 @@ import headset02 from "../assets/images/home-2.webp";
 import headset03 from "../assets/images/home-3.webp";
 import headset04 from "../assets/images/home-4.webp";
 import headset05 from "../assets/images/home-5.webp";
+import Loader from "./Loader";
 
 export default function Home() {
+	const [loading, setLoading] = useState(false);
 	const [featuredProducts, setFeaturedProducts] = useState([]);
+	const [allProducts, setAllProducts] = useState([]);
 	const [selectedProduct, setSelectedProduct] = useState(null);
 
 	const [title, setTitle] = useState(
@@ -37,11 +40,35 @@ export default function Home() {
 	);
 
 	useEffect(() => {
-		// Fetch featured products data
+		setLoading(true);
 		axios
 			.get("https://thebroadcaststore.co/admins/api/all-feature-products")
 			.then((response) => {
 				setFeaturedProducts(response.data);
+				setLoading(false);
+			})
+			.catch((error) => {
+				console.error("Error fetching category:", error);
+			});
+
+		// Set document title and meta description
+		document.title = title;
+		document
+			.getElementById("meta-description")
+			.setAttribute("content", description);
+
+		// Initialize AOS and scroll to top
+		AOS.init({ duration: 2000 });
+		window.scrollTo(0, 0);
+	}, [title, description]);
+
+	useEffect(() => {
+		setLoading(true);
+		axios
+			.get("https://thebroadcaststore.co/admins/api/all-products")
+			.then((response) => {
+				setAllProducts(response.data);
+				setLoading(false);
 			})
 			.catch((error) => {
 				console.error("Error fetching category:", error);
@@ -278,36 +305,40 @@ export default function Home() {
 						</Container>
 					</div>
 
-					<div className="ft-products">
-						<Slider {...settings}>
-							{featuredProducts.slice(0, 6).map((product) => (
-								<Grid
-									className="ftrd-slide"
-									key={product.id}>
-									<Grid className="ftrd-pro">
-										<div class="product">
-											<h4 class="title">{product.title}</h4>
-											<div class="pro-image">
-												<img
-													src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
-													alt=""
-												/>
+					{loading ? (
+						<Loader />
+					) : (
+						<div className="ft-products">
+							<Slider {...settings}>
+								{featuredProducts.slice(0, 6).map((product) => (
+									<Grid
+										className="ftrd-slide"
+										key={product.id}>
+										<Grid className="ftrd-pro">
+											<div class="product">
+												<h4 class="title">{product.title}</h4>
+												<div class="pro-image">
+													<img
+														src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
+														alt=""
+													/>
+												</div>
+												<p class="short-des">{product.short_desc}</p>
+												<div class="price-btn">
+													<p class="price">Call for Price </p>
+													<Button className="lrn-more cart">
+														<Link to={`/product-detail/${product.slug}`}>
+															learn More
+														</Link>
+													</Button>
+												</div>
 											</div>
-											<p class="short-des">{product.short_desc}</p>
-											<div class="price-btn">
-												<p class="price">Call for Price </p>
-												<Button className="lrn-more cart">
-													<Link to={`/product-detail/${product.slug}`}>
-														learn More
-													</Link>
-												</Button>
-											</div>
-										</div>
+										</Grid>
 									</Grid>
-								</Grid>
-							))}
-						</Slider>
-					</div>
+								))}
+							</Slider>
+						</div>
+					)}
 
 					<div id="tech">
 						<div className="tech-content">
@@ -604,42 +635,46 @@ export default function Home() {
 									<Col className="button-container">
 										<div className="button">
 											<Button className="lrn-more">
-												<Link to={"/product"}>
-													Best Seller <FaArrowRightLong />
+												<Link to={"/all-product"}>
+													View All Products <FaArrowRightLong />
 												</Link>
 											</Button>
 										</div>
 									</Col>
 								</Row>
 							</div>
-							<div className="products-container">
-								{featuredProducts.slice(0, 8).map((product) => (
-									<div
-										className="ftrd-slide"
-										key={product.id}>
-										<div className="ftrd-pro">
-											<div class="product">
-												<h4 class="title">{product.title}</h4>
-												<div class="pro-image">
-													<img
-														src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
-														alt=""
-													/>
-												</div>
-												<p class="short-des">{product.short_desc}</p>
-												<div class="price-btn">
-													<p class="price">Call for Price </p>
-													<Button className="lrn-more cart">
-														<Link to={`/product-detail/${product.slug}`}>
-															learn More
-														</Link>
-													</Button>
+							{loading ? (
+								<Loader />
+							) : (
+								<div className="products-container">
+									{allProducts.slice(0, 8).map((product) => (
+										<div
+											className="ftrd-slide"
+											key={product.id}>
+											<div className="ftrd-pro">
+												<div class="product">
+													<h4 class="title">{product.title}</h4>
+													<div class="pro-image">
+														<img
+															src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
+															alt=""
+														/>
+													</div>
+													<p class="short-des">{product.short_desc}</p>
+													<div class="price-btn">
+														<p class="price">Call for Price </p>
+														<Button className="lrn-more cart">
+															<Link to={`/product-detail/${product.slug}`}>
+																learn More
+															</Link>
+														</Button>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								))}
-							</div>
+									))}
+								</div>
+							)}
 							<Svg />
 						</Container>
 					</Grid>

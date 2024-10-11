@@ -1021,6 +1021,12 @@ div#tech h2 {
 .repair-headcontent .image {
 	width: 50%;
 }
+
+#product .headcontent {
+	padding: 20px 10px;
+	border-radius: 10px;
+	background-color: #f8f8f8;
+}
 .repair-headcontent .image img {
 	width: 100%;
 	height: 100%;
@@ -4896,7 +4902,7 @@ btn {
 	gap: 20px;
 	flex-wrap: wrap;
 	background-color: white;
-	margin: 0 0;
+	margin: 50px 0;
 }
 
 .search-container-product .product {
@@ -5008,9 +5014,6 @@ btn {
 	background: linear-gradient(93deg, #04b4ff -1.47%, #006bcd 101.31%);
 }
 
-.search-container-product .ftrd-slide {
-	margin: 50px 0;
-}
 .search-container-product .contact-theme-btn {
 	color: #fcfcfc;
 	font-family: Montserrat;
@@ -5067,4 +5070,17 @@ btn {
 	width: 100%;
 	height: 350px !important;
 	object-fit: cover;
+}
+
+.loader {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 30px;
+	justify-content: center;
+	padding: 20px 0px;
+}
+
+.btn-all-product {
+	text-align: center !important;
 }

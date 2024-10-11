@@ -59,7 +59,7 @@ export default function SearchResult() {
 			<div className="search-container">
 				{!selectedProduct ? (
 					<div className="products-container search-container-product">
-						{searchResults.slice(0, 8).map((product) => (
+						{searchResults.map((product) => (
 							<div
 								className="ftrd-slide"
 								key={product.id}>
