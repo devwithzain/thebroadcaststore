@@ -176,12 +176,6 @@ const Navbarmenu = () => {
 													/>
 												</Grid>
 												<Grid className="pro-disp">
-													<Grid className="prod-sku">
-														<Typography variant="body">SKU#</Typography>
-														<Typography variant="body">
-															{product.sku}
-														</Typography>
-													</Grid>
 													<Typography variant="h5">{product.title}</Typography>
 													<p className="body">{product.short_desc}</p>{" "}
 													{/* Render HTML content */}

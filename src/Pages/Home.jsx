@@ -64,7 +64,7 @@ export default function Home() {
 		infinite: true,
 		speed: 500,
 		slidesToShow: 5,
-		slidesToScroll: 1,
+		slidesToScroll: 2,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -280,14 +280,13 @@ export default function Home() {
 
 					<div className="ft-products">
 						<Slider {...settings}>
-							{featuredProducts.map((product) => (
+							{featuredProducts.slice(0, 6).map((product) => (
 								<Grid
 									className="ftrd-slide"
 									key={product.id}>
 									<Grid className="ftrd-pro">
 										<div class="product">
 											<h4 class="title">{product.title}</h4>
-											<p class="sku">SKU# {product.sku}</p>
 											<div class="pro-image">
 												<img
 													src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
@@ -621,7 +620,6 @@ export default function Home() {
 										<div className="ftrd-pro">
 											<div class="product">
 												<h4 class="title">{product.title}</h4>
-												<p class="sku">SKU# {product.sku}</p>
 												<div class="pro-image">
 													<img
 														src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}

@@ -363,8 +363,8 @@ export default function Product() {
 									className="button-container">
 									<div className="button">
 										<Button className="lrn-more">
-											<Link to={"#"}>
-												Best Seller <FaArrowRightLong />
+											<Link to={"/all-product"}>
+												View All Products <FaArrowRightLong />
 											</Link>
 										</Button>
 									</div>
@@ -381,7 +381,6 @@ export default function Product() {
 											<div className="ftrd-pro">
 												<div className="product">
 													<h4 className="title">{product.title}</h4>
-													<p className="sku">SKU# {product.sku}</p>
 													<div className="pro-image">
 														<img
 															src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
@@ -420,7 +419,6 @@ export default function Product() {
 											<div className="ftrd-pro">
 												<div className="product">
 													<h4 className="title">{product.title}</h4>
-													<p className="sku">SKU# {product.sku}</p>
 													<div className="pro-image">
 														<img
 															src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
@@ -459,7 +457,6 @@ export default function Product() {
 											<div className="ftrd-pro">
 												<div className="product">
 													<h4 className="title">{product.title}</h4>
-													<p className="sku">SKU# {product.sku}</p>
 													<div className="pro-image">
 														<img
 															src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
@@ -499,7 +496,6 @@ export default function Product() {
 												<div className="ftrd-pro">
 													<div className="product">
 														<h4 className="title">{product.title}</h4>
-														<p className="sku">SKU# {product.sku}</p>
 														<div className="pro-image">
 															<img
 																src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}

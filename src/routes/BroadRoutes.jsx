@@ -14,6 +14,7 @@ import Financing from "../Pages/Financing";
 import Shipping from "../Pages/Shipping";
 import ProductDetail from "../Pages/ProductDetail";
 import CategoryDetail from "../Pages/CategoryDetail";
+import AllProduct from "../Pages/AllProduct";
 
 const BroadRoutes = () => {
 	return (
@@ -37,6 +38,10 @@ const BroadRoutes = () => {
 			<Route
 				path="/product-detail/:slug"
 				element={<ProductDetail />}
+			/>
+			<Route
+				path="/all-product"
+				element={<AllProduct />}
 			/>
 			<Route
 				path="/product/:slug"

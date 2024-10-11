@@ -36,10 +36,8 @@ export default function ProductDetail() {
 					options,
 				);
 				const productData = await response.json();
-				console.log(productData);
 				setProduct(productData);
 			} catch (error) {
-				console.error(error);
 				setLoading(true);
 			} finally {
 				setLoading(false);
@@ -66,6 +64,7 @@ export default function ProductDetail() {
 										<img
 											src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
 											alt={product.title}
+											className="all-product-bannerText-Img"
 										/>
 									</div>
 								</Col>
