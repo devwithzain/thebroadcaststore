@@ -5062,3 +5062,9 @@ btn {
 	background-color: blue;
 	display: flex;
 }
+
+.all-product-bannerText-Img {
+	width: 100%;
+	height: 350px !important;
+	object-fit: cover;
+}
