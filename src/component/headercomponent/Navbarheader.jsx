@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import MobileNav from "../../Pages/MobileNavbar";
 import thebroadcastlogo from "../../assets/images/thebroadcastlogo.webp";
 import axios from "axios";
@@ -51,37 +51,53 @@ export default function Navbarheader() {
 			<nav className="nav">
 				<div className="navbars">
 					<div className="left-col">
-						<Link
+						<NavLink
 							className="link"
-							to="/">
+							to="/"
+							activeClassName="active"
+							style={({ isActive }) => ({
+								fontWeight: isActive ? "bold" : "normal",
+							})}>
 							Home
-						</Link>
-						<Link
+						</NavLink>
+						<NavLink
 							className="link"
-							to="/about">
+							to="/about"
+							activeClassName="active"
+							style={({ isActive }) => ({
+								fontWeight: isActive ? "bold" : "normal",
+							})}>
 							About Us
-						</Link>
+						</NavLink>
 					</div>
 					<div className="logo">
-						<Link to="/">
+						<NavLink to="/">
 							<img
 								src={thebroadcastlogo}
 								className="d-inline-block align-top"
 								alt="Logo"
 							/>
-						</Link>
+						</NavLink>
 					</div>
 					<div className="right-col">
-						<Link
+						<NavLink
 							className="link"
-							to="/product">
+							to="/product"
+							activeClassName="active"
+							style={({ isActive }) => ({
+								fontWeight: isActive ? "bold" : "normal",
+							})}>
 							Product
-						</Link>
-						<Link
+						</NavLink>
+						<NavLink
 							className="link"
-							to="/contact">
+							to="/contact"
+							activeClassName="active"
+							style={({ isActive }) => ({
+								fontWeight: isActive ? "bold" : "normal",
+							})}>
 							Contact
-						</Link>
+						</NavLink>
 					</div>
 				</div>
 				<div className="topbar">

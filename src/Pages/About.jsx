@@ -44,7 +44,6 @@ export default function About() {
 						About Us
 					</h1>
 				</div>
-				<p className="breadcum">Home . About Us</p>
 			</div>
 			<div id="abt-text-about">
 				<div className="headcontent">
