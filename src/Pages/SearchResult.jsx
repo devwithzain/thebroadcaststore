@@ -1,12 +1,11 @@
 import axios from "axios";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { IoStarSharp } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
 import Container from "@mui/material/Container";
 import React, { useState, useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
 
 const useQuery = () => {
 	return new URLSearchParams(useLocation().search);
@@ -14,6 +13,7 @@ const useQuery = () => {
 
 export default function SearchResult() {
 	const query = useQuery();
+	const [loading, setLoading] = useState(false);
 	const searchQuery = query.get("q");
 	const [searchResults, setSearchResults] = useState([]);
 	const [selectedProduct, setSelectedProduct] = useState(null);
@@ -21,6 +21,8 @@ export default function SearchResult() {
 	const [description, setDescription] = useState(
 		"Broadcast Store is a professional audiovisual equipment company providing services like consignment, system integration, and media migration etc.",
 	);
+
+	// Update document title and meta description
 	useEffect(() => {
 		document.title = title;
 		document
@@ -28,39 +30,57 @@ export default function SearchResult() {
 			.setAttribute("content", description);
 	}, [title, description]);
 
+	// Scroll to top on component mount
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
+	// Fetch search results from API
 	useEffect(() => {
 		if (searchQuery) {
+			setLoading(true);
 			axios
 				.get(
 					`https://thebroadcaststore.co/admins/api/products/search?q=${searchQuery}`,
 				)
 				.then((response) => {
 					setSearchResults(response.data);
+					setLoading(false);
 				})
 				.catch((error) => {
 					console.error("Error searching products:", error);
+					setLoading(false);
 				});
 		}
 	}, [searchQuery]);
+
+	// Filter products that start with the first letter of the search query
+	const filteredResults = searchResults.filter((product) =>
+		product.title.toLowerCase().startsWith(searchQuery[0].toLowerCase()),
+	);
 
 	return (
 		<>
 			<div className="search-container-contact-bannerText innerban">
 				<h1
-					class="contact-heading aos-init aos-animate"
+					className="contact-heading"
 					data-aos="fade-up">
-					{searchResults.length > 0 ? "Search Results" : "No Products Found"}
+					{loading ? (
+						"Loading..."
+					) : (
+						<>
+							{filteredResults.length > 0
+								? "Search Results"
+								: "No Products Found"}
+						</>
+					)}
 				</h1>
 			</div>
-			{searchResults.length > 0 && (
+			{filteredResults.length > 0 && (
 				<div className="search-container">
 					{!selectedProduct ? (
 						<div className="products-container search-container-product">
-							{searchResults.map((product) => (
+							{filteredResults.map((product) => (
 								<div
 									className="ftrd-slide"
 									key={product.id}>
@@ -75,7 +95,7 @@ export default function SearchResult() {
 											</div>
 											<p className="short-des">{product.short_desc}</p>
 											<div className="price-btn">
-												<p class="price">Call for Price </p>
+												<p className="price">Call for Price</p>
 												<Link
 													className="search-card-btn"
 													to={`/product-detail/${product.slug}`}>

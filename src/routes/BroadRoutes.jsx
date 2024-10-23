@@ -15,6 +15,7 @@ import Shipping from "../Pages/Shipping";
 import ProductDetail from "../Pages/ProductDetail";
 import CategoryDetail from "../Pages/CategoryDetail";
 import AllProduct from "../Pages/AllProduct";
+import Brand from "../Pages/Brand";
 
 const BroadRoutes = () => {
 	return (
@@ -86,6 +87,10 @@ const BroadRoutes = () => {
 			<Route
 				path="/Product"
 				element={<Product />}
+			/>
+			<Route
+				path="/Brand/:brandName"
+				element={<Brand />}
 			/>
 		</Routes>
 	);

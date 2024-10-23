@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import DropDown from "../DropDown";
 
 export default function Navbarheader() {
 	const [productCat, setProductCat] = useState([]);
@@ -89,6 +90,7 @@ export default function Navbarheader() {
 							})}>
 							Product
 						</NavLink>
+						<DropDown />
 						<NavLink
 							className="link"
 							to="/contact"

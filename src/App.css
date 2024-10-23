@@ -5085,3 +5085,69 @@ btn {
 .btn-all-product {
 	text-align: center !important;
 }
+
+/* Container styles */
+.dropdown-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Button styles */
+.dropdown-button {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem; /* 2 */
+	color: #000; /* text-indigo-50 */
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
+
+.dropdown-button-text {
+	color: #000;
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-family: Montserrat;
+	font-weight: normal;
+}
+
+/* Dropdown list styles */
+.dropdown-list {
+	display: flex;
+	flex-direction: column;
+	text-transform: capitalize;
+	padding: 8px; /* p-2 */
+	border-radius: 0.5rem; /* rounded-lg */
+	background-color: white; /* bg-white */
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+		0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+	position: absolute;
+	top: 120%; /* top-[120%] */
+	left: 50%; /* left-[50%] */
+	width: 9rem; /* w-48 */
+	overflow: hidden; /* overflow-hidden */
+}
+
+/* Option styles */
+.dropdown-option {
+	width: 100%;
+	color: #001834;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 4px 10px;
+	font-family: Montserrat;
+	font-weight: normal;
+	white-space: nowrap; /* whitespace-nowrap */
+	color: #374151; /* text-slate-700 */
+	cursor: pointer; /* cursor-pointer */
+}
+
+.dropdown-option:hover {
+	background-color: #e5e7eb; /* hover:bg-indigo-100 */
+	color: #00acea; /* hover:text-indigo-500 */
+}
+
+.relative {
+	position: relative; /* Ensures child elements position correctly */
+}
