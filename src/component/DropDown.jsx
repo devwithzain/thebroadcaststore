@@ -28,7 +28,16 @@ const DropDown = () => {
 					variants={wrapperVariants}
 					style={{ originY: "top", translateX: "-50%" }}
 					className="dropdown-list">
-					{["sony", "canon", "panasonic"].map((item, index) => (
+					{[
+						"sony",
+						"canon",
+						"panasonic",
+						"blackmagic design",
+						"ikegami",
+						"leitch",
+						"grass valley",
+						"tektronix",
+					].map((item, index) => (
 						<Option
 							key={index}
 							onSelect={handleSelect}

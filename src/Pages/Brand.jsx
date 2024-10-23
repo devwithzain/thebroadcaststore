@@ -2,20 +2,17 @@ import Aos from "aos";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Link, useParams } from "react-router-dom"; // Import useParams
 import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Container, Grid, Button } from "@mui/material";
 
-import Carousel from "../component/Slider";
 import sliderImg1 from "../assets/images/carousel1.webp";
 import sliderImg2 from "../assets/images/carousel2.webp";
 import sliderImg3 from "../assets/images/carousel5.webp";
 import sliderImg4 from "../assets/images/carousel4.webp";
-import productTextImg from "../assets/images/productTextImg.webp";
-import Loader from "./Loader";
 
 export default function Brand() {
-	const { brandName } = useParams(); // Get brand name from URL
+	const { brandName } = useParams();
 	const [title, setTitle] = useState(
 		`Product - ${brandName.charAt(0).toUpperCase() + brandName.slice(1)}`,
 	);
@@ -49,7 +46,6 @@ export default function Brand() {
 			.get("https://thebroadcaststore.co/admins/api/all-products")
 			.then((response) => {
 				setProducts(response.data);
-				// Filter products based on brand name when products are fetched
 				const filtered = response.data.filter((product) =>
 					product.title.toLowerCase().startsWith(brandName.toLowerCase()),
 				);
@@ -59,33 +55,27 @@ export default function Brand() {
 			.catch((error) => {
 				console.error("Error fetching featured products:", error);
 			});
-	}, [brandName]); // Depend on brandName to refetch when it changes
+	}, [brandName]);
 
 	return (
 		<>
-			<div className="carousel-container1">
-				<Carousel
-					slides={imgItem}
-					autoSlide={true}
-					autoSlideInterval={5000}
-				/>
-				<div className="contact-bannerText product-slider-text">
-					<img
-						src={productTextImg}
-						alt="product-bannerText-Img"
-						className="product-bannerText-Img"
-					/>
-					<h1
-						className="contact-heading aos-init aos-animate product-slider-heading"
-						data-aos="fade-up">
-						All Products
-					</h1>
-				</div>
+			<div className="search-container-contact-bannerText innerban">
+				<h1
+					className="contact-heading"
+					data-aos="fade-up">
+					{loading ? (
+						"Loading..."
+					) : (
+						<>
+							{filteredProducts.length > 0
+								? `${brandName} Products`
+								: "No Products Found"}
+						</>
+					)}
+				</h1>
 			</div>
 
-			{loading ? (
-				<Loader />
-			) : (
+			{!loading && (
 				<Grid
 					className="ft-products brd-line"
 					id="all-pro">
